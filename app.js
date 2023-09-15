@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const multer = require('multer')
-const port = '3000';
+const PORT = process.env.PORT || 3000;
 
 
 const storage = multer.diskStorage({
@@ -28,6 +28,6 @@ app.post('/upload', upload.single('uploaded_file'), (req, res)=> {
 })
 
 
-app.listen(port, ()=> {
-    console.log("server is running at", port)
+app.listen(PORT, ()=> {
+    console.log("server is running at", PORT)
 })
